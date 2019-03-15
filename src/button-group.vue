@@ -6,7 +6,18 @@
 
 <script>
     export default {
-        
+        mounted () {
+            console.log(this.$children);//Vue只打印实例
+            console.log(this.$el);
+            console.log(this.$el.children);
+            for(let node of this.$el.children) {
+                console.log(node);
+                let name = node.nodeName.toLowerCase()
+                if( name !== 'button') {
+                    console.warn(`该组件的子元素应该为g-button,不应该是${name}`)
+                }
+            }
+        }
     }
 </script>
 
