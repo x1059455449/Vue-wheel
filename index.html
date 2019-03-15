@@ -29,41 +29,25 @@
     }
     </style>
     <style>
-        .g-button {
-            font-size: var(--font-size);
-            height: var(--button-height);
-            padding: 0 1em;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            background: var(--button-bg);
-        }
-        .g-button:active {
-            background-color: var(--button-active-bg);
-        }
-        .g-button:hover {
-            border-color: var(--border-color-hover);
-        }
-        .g-button:focus {
-            outline: none;
-        }
+    .icon {
+        width: 1em;
+        height: 1em;
+    }
     </style>
 </head>
 <body>
     <div id="app">
-        <g-button></g-button>
-        
+        <g-button icon="setting">
+            Button
+        </g-button>
+        <g-button >
+            Button
+        </g-button>
+        <g-button icon="setting" icon-position="right">
+            Button
+        </g-button>
     </div>
-    <script src="./node_modules/vue/dist/vue.min.js"></script>
-    <script src="./button.js"></script>
-    <script>
-        
-    new Vue({
-        el:'#app',
-        data:{
-            
-        }
-    })
-
-    </script>
+    <script src="./src/app.js"></script>
+    <script src="//at.alicdn.com/t/font_1091079_0blcvdbcq00n.js"></script>
 </body>
 </html>
