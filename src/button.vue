@@ -1,8 +1,9 @@
 <template>
-    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
+    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}"
+    @click="$emit('click')">
         <!-- <svg v-if="icon" class="icon"><use :xlink:href="`#i-${icon}`" ></use></svg> -->
-        <g-icon v-if="icon" :name="icon" class="icon"></g-icon>
-        <g-icon name="loading" class="loading"></g-icon>
+        <g-icon v-if="icon && !loading" :name="icon" class="icon"></g-icon>
+        <g-icon name="loading " v-if="loading" class="loading icon"></g-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -29,8 +30,12 @@
                     //优化
                     return !(value !== 'left' && value !== 'right')
                     //return value !== 'left' && value !== 'right' ? false : true;
-                }
-           }
+                }    
+           },
+           loading:{
+                type:Boolean,
+                default:false
+            } 
        }
     }
 </script>
