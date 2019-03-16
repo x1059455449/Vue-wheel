@@ -7,9 +7,9 @@
 <script>
     export default {
         mounted () {
-            console.log(this.$children);//Vue只打印实例
-            console.log(this.$el);
-            console.log(this.$el.children);
+            //console.log(this.$children);//Vue只打印实例
+            //console.log(this.$el);
+            //console.log(this.$el.children);
             for(let node of this.$el.children) {
                 console.log(node);
                 let name = node.nodeName.toLowerCase()

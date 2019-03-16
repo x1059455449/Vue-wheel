@@ -3,7 +3,7 @@
     @click="$emit('click')">
         <!-- <svg v-if="icon" class="icon"><use :xlink:href="`#i-${icon}`" ></use></svg> -->
         <g-icon v-if="icon && !loading" :name="icon" class="icon"></g-icon>
-        <g-icon name="loading " v-if="loading" class="loading icon"></g-icon>
+        <g-icon name="loading" v-if="loading" class="loading icon"></g-icon>
         <div class="content">
             <slot></slot>
         </div>
