@@ -1,4 +1,4 @@
-.g-icon {
+.g-icon[data-v-7f2e61] {
     width: 1em;
     height: 1em;
 }
@@ -24,15 +24,15 @@
   position: relative;
   z-index: 1;
 }
-@keyframes spin {
-  0% {
+@keyframes spin-data-v-d94f8d {
+0% {
     transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
-.g-button {
+100% {
+    transform: rotate(360deg);
+}
+}
+.g-button[data-v-d94f8d] {
   font-size: var(--font-size);
   height: var(--button-height);
   padding: 0 1em;
@@ -44,30 +44,30 @@
   align-items: center;
   vertical-align: middle;
 }
-.g-button:active {
+.g-button[data-v-d94f8d]:active {
   background-color: var(--button-active-bg);
 }
-.g-button:hover {
+.g-button[data-v-d94f8d]:hover {
   border-color: var(--border-color-hover);
 }
-.g-button:focus {
+.g-button[data-v-d94f8d]:focus {
   outline: none;
 }
-.g-button > .icon {
+.g-button > .icon[data-v-d94f8d] {
   order: 1;
   margin-right: 0.3em;
 }
-.g-button > .content {
+.g-button > .content[data-v-d94f8d] {
   order: 2;
 }
-.g-button.icon-right > .icon {
+.g-button.icon-right > .icon[data-v-d94f8d] {
   order: 2;
   margin-right: 0;
   margin-left: 0.3em;
 }
-.g-button.icon-right > .content {
+.g-button.icon-right > .content[data-v-d94f8d] {
   order: 1;
 }
-.g-button .loading {
-  animation: spin 1s infinite linear;
+.g-button .loading[data-v-d94f8d] {
+  animation: spin-data-v-d94f8d 1s infinite linear;
 }

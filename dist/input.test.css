@@ -1,0 +1,39 @@
+.g-icon[data-v-7f2e61] {
+    width: 1em;
+    height: 1em;
+}
+.container[data-v-044e52] {
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+}
+.container[data-v-044e52] :not(last-child) {
+  margin-right: 0.5em;
+}
+.container > input[data-v-044e52] {
+  height: 32px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 0 8px;
+}
+.container > input[data-v-044e52]:hover {
+  border-color: #666;
+}
+.container > input[data-v-044e52]:focus {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+.container > input[disabled][data-v-044e52], .container > input[readonly][data-v-044e52] {
+  border-color: #ccc;
+  color: #ccc;
+  cursor: not-allowed;
+}
+.container.error > input[data-v-044e52] {
+  border-color: #F1453D;
+}
+.container .icon-error[data-v-044e52] {
+  fill: #F1453D;
+}
+.container .errorMessage[data-v-044e52] {
+  color: #F1453D;
+}

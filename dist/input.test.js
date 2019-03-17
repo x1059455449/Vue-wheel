@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/vue/dist/vue.common.dev.js":[function(require,module,exports) {
+})({"../node_modules/vue/dist/vue.common.dev.js":[function(require,module,exports) {
 var global = arguments[3];
 /*!
  * Vue.js v2.6.9
@@ -12040,13 +12040,13 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-},{}],"node_modules/vue/dist/vue.common.js":[function(require,module,exports) {
+},{}],"../node_modules/vue/dist/vue.common.js":[function(require,module,exports) {
 if ("development" === 'production') {
   module.exports = require('./vue.common.prod.js');
 } else {
   module.exports = require('./vue.common.dev.js');
 }
-},{"./vue.common.dev.js":"node_modules/vue/dist/vue.common.dev.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./vue.common.dev.js":"../node_modules/vue/dist/vue.common.dev.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -12078,7 +12078,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -12113,7 +12113,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
 var Vue // late bind
 var version
 var map = Object.create(null)
@@ -12386,7 +12386,7 @@ function patchScopedSlots (instance) {
   }
 }
 
-},{}],"src/icon.vue":[function(require,module,exports) {
+},{}],"../src/icon.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12452,242 +12452,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/button-group.vue":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-//
-//
-//
-//
-//
-//
-var _default = {
-  name: 'vuewheebuttonGroup',
-  mounted: function mounted() {
-    //console.log(this.$children);//Vue只打印实例
-    //console.log(this.$el);
-    //console.log(this.$el.children);
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = this.$el.children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var node = _step.value;
-        console.log(node);
-        var name = node.nodeName.toLowerCase();
-
-        if (name !== 'button') {
-          console.warn("\u8BE5\u7EC4\u4EF6\u7684\u5B50\u5143\u7D20\u5E94\u8BE5\u4E3Ag-button,\u4E0D\u5E94\u8BE5\u662F".concat(name));
-        }
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator.return != null) {
-          _iterator.return();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
-  }
-};
-exports.default = _default;
-        var $d17d10 = exports.default || module.exports;
-      
-      if (typeof $d17d10 === 'function') {
-        $d17d10 = $d17d10.options;
-      }
-    
-        /* template */
-        Object.assign($d17d10, (function () {
-          var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "button-group" }, [_vm._t("default")], 2)
-}
-var staticRenderFns = []
-render._withStripped = true
-
-          return {
-            render: render,
-            staticRenderFns: staticRenderFns,
-            _compiled: true,
-            _scopeId: "data-v-d17d10",
-            functional: undefined
-          };
-        })());
-      
-    /* hot reload */
-    (function () {
-      if (module.hot) {
-        var api = require('vue-hot-reload-api');
-        api.install(require('vue'));
-        if (api.compatible) {
-          module.hot.accept();
-          if (!module.hot.data) {
-            api.createRecord('$d17d10', $d17d10);
-          } else {
-            api.reload('$d17d10', $d17d10);
-          }
-        }
-
-        
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-      }
-    })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/button.vue":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _vue = _interopRequireDefault(require("vue"));
-
-var _button = _interopRequireDefault(require("./button"));
-
-var _icon = _interopRequireDefault(require("./icon"));
-
-var _buttonGroup = _interopRequireDefault(require("./button-group"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-_vue.default.component('g-button', _button.default);
-
-_vue.default.component('g-icon', _icon.default);
-
-_vue.default.component('button-group', _buttonGroup.default);
-
-var _default = {
-  name: 'vuewheebutton',
-  //props:['icon','iconPosition']
-  props: {
-    icon: {},
-    iconPosition: {
-      type: String,
-      default: 'left',
-      //属性检查器
-      validator: function validator(value) {
-        console.log(value); // if(value !== 'left' && value !== 'right') {
-        //     console.log('please input left or right')
-        //     return false
-        // } else {
-        //     return true
-        // }
-        //优化
-
-        return !(value !== 'left' && value !== 'right'); //return value !== 'left' && value !== 'right' ? false : true;
-      }
-    },
-    loading: {
-      type: Boolean,
-      default: false
-    }
-  }
-};
-exports.default = _default;
-        var $d94f8d = exports.default || module.exports;
-      
-      if (typeof $d94f8d === 'function') {
-        $d94f8d = $d94f8d.options;
-      }
-    
-        /* template */
-        Object.assign($d94f8d, (function () {
-          var render = function() {
-  var _obj
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "button",
-    {
-      staticClass: "g-button",
-      class: ((_obj = {}), (_obj["icon-" + _vm.iconPosition] = true), _obj),
-      on: {
-        click: function($event) {
-          return _vm.$emit("click")
-        }
-      }
-    },
-    [
-      _vm.icon && !_vm.loading
-        ? _c("g-icon", { staticClass: "icon", attrs: { name: _vm.icon } })
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.loading
-        ? _c("g-icon", {
-            staticClass: "loading icon",
-            attrs: { name: "loading" }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-          return {
-            render: render,
-            staticRenderFns: staticRenderFns,
-            _compiled: true,
-            _scopeId: "data-v-d94f8d",
-            functional: undefined
-          };
-        })());
-      
-    /* hot reload */
-    (function () {
-      if (module.hot) {
-        var api = require('vue-hot-reload-api');
-        api.install(require('vue'));
-        if (api.compatible) {
-          module.hot.accept();
-          if (!module.hot.data) {
-            api.createRecord('$d94f8d', $d94f8d);
-          } else {
-            api.reload('$d94f8d', $d94f8d);
-          }
-        }
-
-        
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-      }
-    })();
-},{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue","./button-group":"src/button-group.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"src/input.vue":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.common.js"}],"../src/input.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12818,152 +12583,131 @@ render._withStripped = true
       
       }
     })();
-},{"./icon":"src/icon.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/app.js":[function(require,module,exports) {
+},{"./icon":"../src/icon.vue","_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.common.js"}],"input.test.js":[function(require,module,exports) {
 "use strict";
 
 var _vue = _interopRequireDefault(require("vue"));
 
-var _button = _interopRequireDefault(require("./button"));
-
-var _icon = _interopRequireDefault(require("./icon"));
-
-var _buttonGroup = _interopRequireDefault(require("./button-group"));
-
-var _input = _interopRequireDefault(require("./input"));
+var _input = _interopRequireDefault(require("../src/input"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_vue.default.component('g-button', _button.default);
+var expect = chai.expect;
+_vue.default.config.productionTip = false;
+_vue.default.config.devtools = false;
+describe('Input', function () {
+  it('存在.', function () {
+    expect(_input.default).to.be.ok;
+  });
+  describe('接收props', function () {
+    var Constructor = _vue.default.extend(_input.default);
 
-_vue.default.component('g-icon', _icon.default);
-
-_vue.default.component('button-group', _buttonGroup.default);
-
-_vue.default.component('g-input', _input.default);
-
-new _vue.default({
-  el: '#app',
-  data: {
-    loadingchange1: false,
-    loadingchange2: true,
-    loadingchange3: false
-  },
-  created: function created() {
-    var _this = this;
-
-    setTimeout(function () {
-      var event = new Event('change');
-
-      var inputElement = _this.$el.querySelector('input');
-
-      inputElement.dispatchEvent(event);
-      console.log('succes');
-    }, 3000);
-  },
-  methods: {
-    changeinput: function changeinput(e) {
-      console.log(e);
-      console.log(e.target.value);
-    }
-  }
-}); //单元测试
-
-/*import chai from 'chai'
-import spies from 'chai-spies'
-chai.use(spies)
-
-const expect = chai.expect
-{
-    const Constructor  =  Vue.extend(Button)
-    //console.log(Constructor)
-    const vm = new Constructor({
-        propsData:{
-            icon:'setting'
+    var vm;
+    afterEach(function () {
+      vm.$destroy();
+    });
+    it('可以接收value', function () {
+      //const Constructor = Vue.extend(Input)
+      vm = new Constructor({
+        propsData: {
+          value: '1234'
         }
-    })
-    vm.$mount('#test')
-    let useElement = vm.$el.querySelector('use')
-    //console.log(useElement)
-    expect(useElement.getAttribute('xlink:href')).to.eq('#i-setting')
-    vm.$el.remove()
-    vm.$destroy()
-}
-
-{
-    const Constructor  =  Vue.extend(Button)
-    //console.log(Constructor)
-    const vm = new Constructor({
-        propsData:{
-            icon:'setting',
-            loading:true
+      }).$mount();
+      var inputElement = vm.$el.querySelector('input');
+      expect(inputElement.value).to.equal('1234'); //vm.$destroy()
+    });
+    it('可以接收disabled', function () {
+      //const Constructor = Vue.extend(Input)
+      vm = new Constructor({
+        propsData: {
+          disabled: true
         }
-    })
-    vm.$mount()
-    let useElement = vm.$el.querySelector('use')
-    let href = useElement.getAttribute('xlink:href')
-    //console.log(useElement)
-    expect(href).to.eq('#i-loading')
-    vm.$el.remove()
-    vm.$destroy()
-}
-{
-    const div = document.createElement('div')
-    document.body.appendChild(div)
-    const Constructor  =  Vue.extend(Button)
-    //console.log(Constructor)
-    const vm = new Constructor({
-        propsData:{
-            icon:'setting'
+      }).$mount();
+      var inputElement = vm.$el.querySelector('input');
+      console.log(inputElement.outerHTML);
+      expect(inputElement.disabled).to.equal(true); //vm.$destroy()
+    });
+    it('可以接收readonly', function () {
+      //const Constructor = Vue.extend(Input)
+      vm = new Constructor({
+        propsData: {
+          readonly: true
         }
-    })
-    vm.$mount(div)
-    let svg = vm.$el.querySelector('svg')
-    let {order} = window.getComputedStyle(svg)
-    expect(order).to.eq('1')
-    vm.$el.remove()
-    vm.$destroy()
-}
-{
-    const div = document.createElement('div')
-    document.body.appendChild(div)
-    const Constructor  =  Vue.extend(Button)
-    //console.log(Constructor)
-    const vm = new Constructor({
-        propsData:{
-            icon:'setting',
-            iconPosition:'right'
+      }).$mount();
+      var inputElement = vm.$el.querySelector('input');
+      console.log(inputElement.outerHTML);
+      expect(inputElement.readOnly).to.equal(true); //vm.$destroy()
+    });
+    it('可以接收error', function () {
+      //const Constructor = Vue.extend(Input)
+      vm = new Constructor({
+        propsData: {
+          error: '你对了'
         }
-    })
-    vm.$mount(div)
-    let svg = vm.$el.querySelector('svg')
-    let {order} = window.getComputedStyle(svg)
-    expect(order).to.eq('2')
-    vm.$el.remove()
-    vm.$destroy()
-}
+      }).$mount();
+      var useElement = vm.$el.querySelector('use');
+      expect(useElement.getAttribute('xlink:href')).to.equal('#i-error');
+      var inputElement = vm.$el.querySelector('input');
+      var errorMessage = vm.$el.querySelector('.errorMessage');
+      expect(errorMessage.innerText).to.equal('你对了'); //vm.$destroy()
+    });
+  });
+  describe('事件', function () {
+    var Constructor = _vue.default.extend(_input.default);
 
-{   //mock
-    const Constructor  =  Vue.extend(Button)
-    //console.log(Constructor)
-    const vm = new Constructor({
-        propsData:{
-            icon:'setting',
-            iconPosition:'right'
-        }
-    })
-    vm.$mount()
-    let spy = chai.spy( () => {
+    var vm;
+    afterEach(function () {
+      vm.$destroy();
+    });
+    it('支持change/input/focus/blur事件', function () {
+      ['change', 'input', 'focus', 'blur'].forEach(function (eventName) {
+        vm = new Constructor({}).$mount();
+        var callback = sinon.fake();
+        vm.$on(eventName, callback); //触发input的change事件
 
-    })
-    vm.$on('click',spy)
+        var event = new Event(eventName);
+        var inputElement = vm.$el.querySelector('input');
+        inputElement.dispatchEvent(event);
+        console.log(eventName); //expect(callback).to.have.been.called
 
-    console.log(vm.$el)
-    let button = vm.$el
-    button.click()
-    expect(spy).to.have.been.called()
-    
-}*/
-},{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue","./button-group":"src/button-group.vue","./input":"src/input.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+        expect(callback).to.have.been.calledWith(event);
+      });
+    }); // it('支持input事件', () => {
+    //     vm = new Constructor({}).$mount()
+    //     const callback = sinon.fake()
+    //     vm.$on('input',callback)
+    //     //触发input的change事件
+    //     let event = new Event('input')
+    //     let inputElement = vm.$el.querySelector('input')
+    //     inputElement.dispatchEvent(event)
+    //     //expect(callback).to.have.been.called
+    //     expect(callback).to.have.been.calledWith(event)
+    // })
+    // it('支持focus事件', () => {
+    //     vm = new Constructor({}).$mount()
+    //     const callback = sinon.fake()
+    //     vm.$on('focus',callback)
+    //     //触发input的change事件
+    //     let event = new Event('focus')
+    //     let inputElement = vm.$el.querySelector('input')
+    //     inputElement.dispatchEvent(event)
+    //     //expect(callback).to.have.been.called
+    //     expect(callback).to.have.been.calledWith(event)
+    // })
+    // it('支持blur事件', () => {
+    //     vm = new Constructor({}).$mount()
+    //     const callback = sinon.fake()
+    //     vm.$on('blur',callback)
+    //     //触发input的change事件
+    //     let event = new Event('blur')
+    //     let inputElement = vm.$el.querySelector('input')
+    //     inputElement.dispatchEvent(event)
+    //     //expect(callback).to.have.been.called
+    //     expect(callback).to.have.been.calledWith(event)
+    // })
+  });
+});
+},{"vue":"../node_modules/vue/dist/vue.common.js","../src/input":"../src/input.vue"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -12991,7 +12735,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61980" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58538" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -13166,5 +12910,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/app.js"], null)
-//# sourceMappingURL=/app.a6a4d504.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","input.test.js"], null)
+//# sourceMappingURL=/input.test.js.map

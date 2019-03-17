@@ -15,7 +15,21 @@ new Vue({
         loadingchange1:false,
         loadingchange2:true,
         loadingchange3:false
-    }
+    },
+    created () {
+        setTimeout(() => {
+            let event = new Event('change')
+            let inputElement = this.$el.querySelector('input')
+            inputElement.dispatchEvent(event)
+            console.log('succes')
+        },3000)
+    },
+    methods:{
+        changeinput (e) {
+            console.log(e);
+            console.log(e.target.value) 
+        }
+    } 
 })
 
 //单元测试

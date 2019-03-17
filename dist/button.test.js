@@ -12399,6 +12399,7 @@ exports.default = void 0;
 //
 //
 var _default = {
+  name: 'vuewheeicon',
   props: ['name']
 };
 exports.default = _default;
@@ -12425,7 +12426,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: null,
+            _scopeId: "data-v-7f2e61",
             functional: undefined
           };
         })());
@@ -12465,6 +12466,7 @@ exports.default = void 0;
 //
 //
 var _default = {
+  name: 'vuewheebuttonGroup',
   mounted: function mounted() {
     //console.log(this.$children);//Vue只打印实例
     //console.log(this.$el);
@@ -12584,6 +12586,7 @@ _vue.default.component('g-icon', _icon.default);
 _vue.default.component('button-group', _buttonGroup.default);
 
 var _default = {
+  name: 'vuewheebutton',
   //props:['icon','iconPosition']
   props: {
     icon: {},
@@ -12658,7 +12661,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: null,
+            _scopeId: "data-v-d94f8d",
             functional: undefined
           };
         })());
@@ -12801,7 +12804,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56431" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58538" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
