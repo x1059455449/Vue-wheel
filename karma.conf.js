@@ -1,3 +1,4 @@
+// 新建 karma.conf.js，内容如下
 module.exports = function (config) {
     config.set({
 
@@ -52,7 +53,7 @@ module.exports = function (config) {
            autoWatch: true,
 
 
-           // start these browsers ChromeHeadless
+           // start these browsers
            // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
            browsers: ['ChromeHeadless'],
 
