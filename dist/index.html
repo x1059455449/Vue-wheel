@@ -29,37 +29,53 @@
     <style>.icon {
         width: 1em;
         height: 1em;
+    }
+    .box {
+        margin:  20px;
     }</style>
 <link rel="stylesheet" href="/app.a6a4d504.css"></head>
 <body>
     <div id="app">
-        <g-button icon="setting" :loading="loadingchange1" @click="loadingchange1 = !loadingchange1">
-            Button
-        </g-button>
-        <g-button :loading="loadingchange2" @click="loadingchange2 = !loadingchange2">
-            Button
-        </g-button>
-        <g-button icon="setting" icon-position="right" :loading="loadingchange3" @click="loadingchange3 = !loadingchange3">
-            Button
-        </g-button>
-        <!-- <svg class="icon">
-            <use xlink:href="#i-cdownload"></use>
-        </svg> -->
-        <g-icon name="cdownload"></g-icon>
-        <g-button icon="cdownload" icon-position="right">
-            DownLoad
-        </g-button>
-
-        <button-group>
-            <g-button icon="left">上一页</g-button>
-            <!-- <div><g-button>更多</g-button></div> -->
-            <g-button>更多</g-button>
-            <g-button icon="right" icon-position="right">下一页</g-button>
-        </button-group>
+        <div class="box">
+            <g-button icon="setting" :loading="loadingchange1" @click="loadingchange1 = !loadingchange1">
+                Button
+            </g-button>
+            <g-button :loading="loadingchange2" @click="loadingchange2 = !loadingchange2">
+                Button
+            </g-button>
+            <g-button icon="setting" icon-position="right" :loading="loadingchange3" @click="loadingchange3 = !loadingchange3">
+                Button
+            </g-button>
+            <!-- <svg class="icon">
+                <use xlink:href="#i-cdownload"></use>
+            </svg> -->
+            <g-icon name="cdownload"></g-icon>
+            <g-button icon="cdownload" icon-position="right">
+                DownLoad
+            </g-button>
+    
+            <button-group style="margin:20px;">
+                <g-button icon="left">上一页</g-button>
+                <!-- <div><g-button>更多</g-button></div> -->
+                <g-button>更多</g-button>
+                <g-button icon="right" icon-position="right">下一页</g-button>
+            </button-group>
+        </div>
 
         <div id="test"></div>
+
+        <div class="box">
+            <g-input value="张三" disabled=""></g-input>
+            <g-input value="李四" readonly=""></g-input>
+            <g-input value="周六"></g-input>
+        </div>
+        <div class="box">
+            <g-input value="吴" error="姓名不能少于两个字"></g-input>
+        </div>
+        
+
     </div>
     <script src="/app.a6a4d504.js"></script>
-    <script src="//at.alicdn.com/t/font_1091079_wtysvstipyi.js"></script>
+    <script src="/svg.8fe7ff3c.js"></script>
 </body>
 </html>

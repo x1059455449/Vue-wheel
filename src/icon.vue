@@ -5,11 +5,12 @@
 
 <script>
     export default {
+        name:'vuewheeicon',
         props:['name']
     }
 </script>
 
-<style >
+<style scoped>
     .g-icon {
         width: 1em;
         height: 1em;

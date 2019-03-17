@@ -20,6 +20,7 @@
     Vue.component('g-icon',Icon)
     Vue.component('button-group',ButtonGroup)
     export default {
+        name:'vuewheebutton',
        //props:['icon','iconPosition']
        props:{
            icon:{},
@@ -48,7 +49,7 @@
     }
 </script>
 
-<style  lang="scss">
+<style  lang="scss" scoped>
 @keyframes spin {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(360deg)}

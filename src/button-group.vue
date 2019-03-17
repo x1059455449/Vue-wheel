@@ -6,6 +6,7 @@
 
 <script>
     export default {
+        name:'vuewheebuttonGroup',
         mounted () {
             //console.log(this.$children);//Vue只打印实例
             //console.log(this.$el);
