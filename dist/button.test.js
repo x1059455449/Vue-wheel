@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/vue/dist/vue.common.dev.js":[function(require,module,exports) {
+})({"../node_modules/vue/dist/vue.common.dev.js":[function(require,module,exports) {
 var global = arguments[3];
 /*!
  * Vue.js v2.6.9
@@ -12040,13 +12040,13 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-},{}],"node_modules/vue/dist/vue.common.js":[function(require,module,exports) {
+},{}],"../node_modules/vue/dist/vue.common.js":[function(require,module,exports) {
 if ("development" === 'production') {
   module.exports = require('./vue.common.prod.js');
 } else {
   module.exports = require('./vue.common.dev.js');
 }
-},{"./vue.common.dev.js":"node_modules/vue/dist/vue.common.dev.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./vue.common.dev.js":"../node_modules/vue/dist/vue.common.dev.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -12078,7 +12078,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -12113,7 +12113,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
 var Vue // late bind
 var version
 var map = Object.create(null)
@@ -12386,7 +12386,7 @@ function patchScopedSlots (instance) {
   }
 }
 
-},{}],"src/icon.vue":[function(require,module,exports) {
+},{}],"../src/icon.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12451,7 +12451,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/button-group.vue":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.common.js"}],"../src/button-group.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12547,7 +12547,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/button.vue":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.common.js"}],"../src/button.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12684,130 +12684,96 @@ render._withStripped = true
       
       }
     })();
-},{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue","./button-group":"src/button-group.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"src/app.js":[function(require,module,exports) {
+},{"vue":"../node_modules/vue/dist/vue.common.js","./button":"../src/button.vue","./icon":"../src/icon.vue","./button-group":"../src/button-group.vue","_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js"}],"button.test.js":[function(require,module,exports) {
 "use strict";
 
 var _vue = _interopRequireDefault(require("vue"));
 
-var _button = _interopRequireDefault(require("./button"));
-
-var _icon = _interopRequireDefault(require("./icon"));
-
-var _buttonGroup = _interopRequireDefault(require("./button-group"));
+var _button = _interopRequireDefault(require("../src/button"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_vue.default.component('g-button', _button.default);
+var expect = chai.expect;
+_vue.default.config.productionTip = false;
+_vue.default.config.devtools = false;
+describe('Button', function () {
+  it('存在.', function () {
+    expect(_button.default).to.be.ok;
+  });
+  it('可以设置icon.', function () {
+    var Constructor = _vue.default.extend(_button.default);
 
-_vue.default.component('g-icon', _icon.default);
+    var vm = new Constructor({
+      propsData: {
+        icon: 'settings'
+      }
+    }).$mount();
+    var useElement = vm.$el.querySelector('use');
+    expect(useElement.getAttribute('xlink:href')).to.equal('#i-settings');
+    vm.$destroy();
+  });
+  it('可以设置loading.', function () {
+    var Constructor = _vue.default.extend(_button.default);
 
-_vue.default.component('button-group', _buttonGroup.default);
+    var vm = new Constructor({
+      propsData: {
+        icon: 'settings',
+        loading: true
+      }
+    }).$mount();
+    var useElements = vm.$el.querySelectorAll('use');
+    expect(useElements.length).to.equal(1);
+    expect(useElements[0].getAttribute('xlink:href')).to.equal('#i-loading');
+    vm.$destroy();
+  });
+  it('icon 默认的 order 是 1', function () {
+    var div = document.createElement('div');
+    document.body.appendChild(div);
 
-new _vue.default({
-  el: '#app',
-  data: {
-    loadingchange1: false,
-    loadingchange2: true,
-    loadingchange3: false
-  }
-}); //单元测试
+    var Constructor = _vue.default.extend(_button.default);
 
-/*import chai from 'chai'
-import spies from 'chai-spies'
-chai.use(spies)
+    var vm = new Constructor({
+      propsData: {
+        icon: 'settings'
+      }
+    }).$mount(div);
+    var icon = vm.$el.querySelector('svg');
+    expect(getComputedStyle(icon).order).to.eq('1');
+    vm.$el.remove();
+    vm.$destroy();
+  });
+  it('设置 iconPosition 可以改变 order', function () {
+    var div = document.createElement('div');
+    document.body.appendChild(div);
 
-const expect = chai.expect
-{
-    const Constructor  =  Vue.extend(Button)
-    //console.log(Constructor)
-    const vm = new Constructor({
-        propsData:{
-            icon:'setting'
-        }
-    })
-    vm.$mount('#test')
-    let useElement = vm.$el.querySelector('use')
-    //console.log(useElement)
-    expect(useElement.getAttribute('xlink:href')).to.eq('#i-setting')
-    vm.$el.remove()
-    vm.$destroy()
-}
+    var Constructor = _vue.default.extend(_button.default);
 
-{
-    const Constructor  =  Vue.extend(Button)
-    //console.log(Constructor)
-    const vm = new Constructor({
-        propsData:{
-            icon:'setting',
-            loading:true
-        }
-    })
-    vm.$mount()
-    let useElement = vm.$el.querySelector('use')
-    let href = useElement.getAttribute('xlink:href')
-    //console.log(useElement)
-    expect(href).to.eq('#i-loading')
-    vm.$el.remove()
-    vm.$destroy()
-}
-{
-    const div = document.createElement('div')
-    document.body.appendChild(div)
-    const Constructor  =  Vue.extend(Button)
-    //console.log(Constructor)
-    const vm = new Constructor({
-        propsData:{
-            icon:'setting'
-        }
-    })
-    vm.$mount(div)
-    let svg = vm.$el.querySelector('svg')
-    let {order} = window.getComputedStyle(svg)
-    expect(order).to.eq('1')
-    vm.$el.remove()
-    vm.$destroy()
-}
-{
-    const div = document.createElement('div')
-    document.body.appendChild(div)
-    const Constructor  =  Vue.extend(Button)
-    //console.log(Constructor)
-    const vm = new Constructor({
-        propsData:{
-            icon:'setting',
-            iconPosition:'right'
-        }
-    })
-    vm.$mount(div)
-    let svg = vm.$el.querySelector('svg')
-    let {order} = window.getComputedStyle(svg)
-    expect(order).to.eq('2')
-    vm.$el.remove()
-    vm.$destroy()
-}
+    var vm = new Constructor({
+      propsData: {
+        icon: 'settings',
+        iconPosition: 'right'
+      }
+    }).$mount(div);
+    var icon = vm.$el.querySelector('svg');
+    expect(getComputedStyle(icon).order).to.eq('2');
+    vm.$el.remove();
+    vm.$destroy();
+  });
+  it('点击 button 触发 click 事件', function () {
+    var Constructor = _vue.default.extend(_button.default);
 
-{   //mock
-    const Constructor  =  Vue.extend(Button)
-    //console.log(Constructor)
-    const vm = new Constructor({
-        propsData:{
-            icon:'setting',
-            iconPosition:'right'
-        }
-    })
-    vm.$mount()
-    let spy = chai.spy( () => {
-
-    })
-    vm.$on('click',spy)
-
-    console.log(vm.$el)
-    let button = vm.$el
-    button.click()
-    expect(spy).to.have.been.called()
-    
-}*/
-},{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue","./button-group":"src/button-group.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+    var vm = new Constructor({
+      propsData: {
+        icon: 'settings'
+      }
+    }).$mount();
+    var callback = sinon.fake();
+    vm.$on('click', callback);
+    vm.$el.click();
+    expect(callback).to.have.been.called;
+  });
+});
+},{"vue":"../node_modules/vue/dist/vue.common.js","../src/button":"../src/button.vue"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -12835,7 +12801,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56753" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56431" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -13010,5 +12976,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/app.js"], null)
-//# sourceMappingURL=/app.a6a4d504.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","button.test.js"], null)
+//# sourceMappingURL=/button.test.js.map
