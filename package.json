@@ -23,7 +23,7 @@
   "homepage": "https://github.com/x1059455449/Vue-wheel#readme",
   "dependencies": {
     "chai": "^4.2.0",
-    "vue": "^2.6.8",
+    "vue": "^2.6.9",
     "vue-hot-reload-api": "^2.3.3"
   },
   "devDependencies": {
@@ -40,7 +40,7 @@
     "sass": "^1.17.2",
     "sinon": "^7.2.7",
     "sinon-chai": "^3.3.0",
-    "vue-template-compiler": "^2.6.8"
+    "vue-template-compiler": "^2.6.9"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"

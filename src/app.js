@@ -17,7 +17,7 @@ new Vue({
 })
 
 //单元测试
-import chai from 'chai'
+/*import chai from 'chai'
 import spies from 'chai-spies'
 chai.use(spies)
 
@@ -111,4 +111,4 @@ const expect = chai.expect
     button.click()
     expect(spy).to.have.been.called()
     
-}
+}*/
