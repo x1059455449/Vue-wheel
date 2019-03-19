@@ -12831,7 +12831,40 @@ exports.default = void 0;
 //
 //
 //
-var _default = {};
+var _default = {
+  name: 'VueWheelRow',
+  props: {
+    gutter: {
+      type: [Number, String]
+    }
+  },
+  // created () {
+  //     console.log('row created');
+  // },
+  computed: {
+    rowStyle: function rowStyle() {
+      var gutter = this.gutter;
+      return {
+        marginLeft: -gutter / 2 + 'px',
+        marginRight: -gutter / 2 + 'px'
+      };
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    //console.log('rou mounted');
+    //console.log(this.$children)
+    this.$children.forEach(function (vm) {
+      vm.gutter = _this.gutter;
+    });
+  }
+};
+/*var div = document.createElement('div')//created
+var childDiv = document.createElement('div')//child created
+div.appendChild(childDiv)//child mounted
+document.body.appendChild(div)//mounted*/
+
 exports.default = _default;
         var $9b8869 = exports.default || module.exports;
       
@@ -12845,7 +12878,12 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [_vm._t("default")], 2)
+  return _c(
+    "div",
+    { staticClass: "row", style: _vm.rowStyle },
+    [_vm._t("default")],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -12893,11 +12931,40 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
   name: 'VueWheelCol',
   props: {
     span: {
       type: [Number, String]
+    },
+    offset: {
+      type: [Number, String]
+    }
+  },
+  data: function data() {
+    return {
+      gutter: 0
+    };
+  },
+  // created () {
+  //     console.log('col created');
+  // },
+  // mounted () {
+  //     console.log('col mounted');
+  // },
+  computed: {
+    colorClass: function colorClass() {
+      var span = this.span,
+          offset = this.offset;
+      return [span && "col-".concat(span), offset && "offset-".concat(offset)];
+    },
+    colorStyle: function colorStyle() {
+      //console.log('changing')
+      return {
+        paddingLeft: this.gutter / 2 + 'px',
+        paddingRight: this.gutter / 2 + 'px'
+      };
     }
   }
 };
@@ -12916,7 +12983,7 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "col", class: ["col-" + _vm.span] },
+    { staticClass: "col", class: _vm.colorClass, style: _vm.colorStyle },
     [_vm._t("default")],
     2
   )
