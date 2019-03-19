@@ -36,10 +36,53 @@
     .box {
         margin:  20px;
     }
+
     </style>
 </head>
 <body>
     <div id="app">
+        <g-row>
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+        </g-row>
+        <g-row>
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+            <g-col>3</g-col>
+        </g-row>
+        <g-row>
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+            <g-col>3</g-col>
+            <g-col>4</g-col>
+        </g-row>
+        <g-row>
+            <g-col span="2">1</g-col>
+            <g-col span="22">2</g-col>
+            <!-- <g-col span=`"22"`>3</g-col> :span="`2`" :span="`22`"-->
+        </g-row>
+        
+        <!-- <div>
+            <div class="row">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div><div class="row">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+                <div class="row">
+                    <div class="col" data-span="2"></div>
+                    <div class="col" data-span="22"></div>
+                </div>    
+        </div> -->
+
         <div class="box">
             <g-button icon="setting" :loading="loadingchange1" @click="loadingchange1 = !loadingchange1">
                 Button
@@ -80,7 +123,6 @@
         <div class="box">
             <g-input value="吴" error="姓名不能少于两个字"></g-input>
         </div>
-        
 
     </div>
     <script src="./src/app.js"></script>
