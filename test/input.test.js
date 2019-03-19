@@ -78,11 +78,17 @@ const expect = chai.expect;
                 vm.$on(eventName,callback)
                 //触发input的change事件
                 let event = new Event(eventName)
+                //为了兼容v-model
+                Object.defineProperty(event,'target',{
+                    value:{value:'v-model'},
+                    enumerable:true
+                })
                 let inputElement = vm.$el.querySelector('input')
                 inputElement.dispatchEvent(event)
                 console.log(eventName)
                 //expect(callback).to.have.been.called
-                expect(callback).to.have.been.calledWith(event)
+                //expect(callback).to.have.been.calledWith(event)
+                expect(callback).to.have.been.calledWith('v-model')
             })   
         })
         // it('支持input事件', () => {

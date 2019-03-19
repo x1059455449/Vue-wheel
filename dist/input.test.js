@@ -12523,16 +12523,16 @@ exports.default = _default;
         domProps: { value: _vm.value },
         on: {
           change: function($event) {
-            return _vm.$emit("change", $event)
+            return _vm.$emit("change", $event.target.value)
           },
           input: function($event) {
-            return _vm.$emit("input", $event)
+            return _vm.$emit("input", $event.target.value)
           },
           focus: function($event) {
-            return _vm.$emit("focus", $event)
+            return _vm.$emit("focus", $event.target.value)
           },
           blur: function($event) {
-            return _vm.$emit("blur", $event)
+            return _vm.$emit("blur", $event.target.value)
           }
         }
       }),
@@ -12665,12 +12665,20 @@ describe('Input', function () {
         var callback = sinon.fake();
         vm.$on(eventName, callback); //触发input的change事件
 
-        var event = new Event(eventName);
+        var event = new Event(eventName); //为了兼容v-model
+
+        Object.defineProperty(event, 'target', {
+          value: {
+            value: 'v-model'
+          },
+          enumerable: true
+        });
         var inputElement = vm.$el.querySelector('input');
         inputElement.dispatchEvent(event);
         console.log(eventName); //expect(callback).to.have.been.called
+        //expect(callback).to.have.been.calledWith(event)
 
-        expect(callback).to.have.been.calledWith(event);
+        expect(callback).to.have.been.calledWith('v-model');
       });
     }); // it('支持input事件', () => {
     //     vm = new Constructor({}).$mount()
@@ -12735,7 +12743,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58538" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53425" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

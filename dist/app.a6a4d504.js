@@ -12595,14 +12595,14 @@ var _default = {
       default: 'left',
       //属性检查器
       validator: function validator(value) {
-        console.log(value); // if(value !== 'left' && value !== 'right') {
+        //console.log(value);
+        // if(value !== 'left' && value !== 'right') {
         //     console.log('please input left or right')
         //     return false
         // } else {
         //     return true
         // }
         //优化
-
         return !(value !== 'left' && value !== 'right'); //return value !== 'left' && value !== 'right' ? false : true;
       }
     },
@@ -12758,16 +12758,16 @@ exports.default = _default;
         domProps: { value: _vm.value },
         on: {
           change: function($event) {
-            return _vm.$emit("change", $event)
+            return _vm.$emit("change", $event.target.value)
           },
           input: function($event) {
-            return _vm.$emit("input", $event)
+            return _vm.$emit("input", $event.target.value)
           },
           focus: function($event) {
-            return _vm.$emit("focus", $event)
+            return _vm.$emit("focus", $event.target.value)
           },
           blur: function($event) {
-            return _vm.$emit("blur", $event)
+            return _vm.$emit("blur", $event.target.value)
           }
         }
       }),
@@ -12846,7 +12846,8 @@ new _vue.default({
   data: {
     loadingchange1: false,
     loadingchange2: true,
-    loadingchange3: false
+    loadingchange3: false,
+    message: ''
   },
   created: function created() {
     var _this = this;
@@ -12862,8 +12863,7 @@ new _vue.default({
   },
   methods: {
     changeinput: function changeinput(e) {
-      console.log(e);
-      console.log(e.target.value);
+      console.log(e); //console.log(e.target.value) 
     }
   }
 }); //单元测试
@@ -12991,7 +12991,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61980" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53424" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

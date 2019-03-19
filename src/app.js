@@ -14,7 +14,8 @@ new Vue({
     data:{
         loadingchange1:false,
         loadingchange2:true,
-        loadingchange3:false
+        loadingchange3:false,
+        message:''
     },
     created () {
         setTimeout(() => {
@@ -27,7 +28,7 @@ new Vue({
     methods:{
         changeinput (e) {
             console.log(e);
-            console.log(e.target.value) 
+            //console.log(e.target.value) 
         }
     } 
 })

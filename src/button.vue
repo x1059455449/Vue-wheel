@@ -29,7 +29,7 @@
                default:'left',
                 //属性检查器
                 validator (value) {
-                    console.log(value);
+                    //console.log(value);
                     // if(value !== 'left' && value !== 'right') {
                     //     console.log('please input left or right')
                     //     return false

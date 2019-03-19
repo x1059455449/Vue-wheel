@@ -12595,14 +12595,14 @@ var _default = {
       default: 'left',
       //属性检查器
       validator: function validator(value) {
-        console.log(value); // if(value !== 'left' && value !== 'right') {
+        //console.log(value);
+        // if(value !== 'left' && value !== 'right') {
         //     console.log('please input left or right')
         //     return false
         // } else {
         //     return true
         // }
         //优化
-
         return !(value !== 'left' && value !== 'right'); //return value !== 'left' && value !== 'right' ? false : true;
       }
     },
@@ -12804,7 +12804,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58538" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53425" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
