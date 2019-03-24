@@ -13460,7 +13460,106 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/app.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/toast.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+//
+//侵入性太强，应该使用插件写法
+// import Vue from 'vue'
+// Vue.prototype.$toast = function () {
+//     console.log('woshi toast')
+// }
+var _default = {
+  name: 'VuewheelToast'
+};
+exports.default = _default;
+        var $f93e04 = exports.default || module.exports;
+      
+      if (typeof $f93e04 === 'function') {
+        $f93e04 = $f93e04.options;
+      }
+    
+        /* template */
+        Object.assign($f93e04, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "toast" }, [_vm._t("default")], 2)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-f93e04",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$f93e04', $f93e04);
+          } else {
+            api.reload('$f93e04', $f93e04);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/plugin.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _toast = _interopRequireDefault(require("./toast"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = {
+  install: function install(Vue, options) {
+    Vue.prototype.$toast = function (message) {
+      //alert(message)
+      //不使用Vue的写法
+      // var div = document.createElement('div')
+      // div.textContent = message
+      // document.body.appendChild(div)
+      var Constructor = Vue.extend(_toast.default);
+      var toast = new Constructor();
+      console.log(message);
+      toast.$slots.default = [message];
+      toast.$mount();
+      document.body.appendChild(toast.$el);
+    };
+  }
+};
+exports.default = _default;
+},{"./toast":"src/toast.vue"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
 var _vue = _interopRequireDefault(require("vue"));
@@ -13487,7 +13586,15 @@ var _layout = _interopRequireDefault(require("./layout"));
 
 var _slide = _interopRequireDefault(require("./slide"));
 
+var _toast = _interopRequireDefault(require("./toast"));
+
+var _plugin = _interopRequireDefault(require("./plugin"));
+
+var _ref;
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 _vue.default.component('g-button', _button.default);
 
@@ -13511,7 +13618,11 @@ _vue.default.component('g-layout', _layout.default);
 
 _vue.default.component('g-slide', _slide.default);
 
-new _vue.default({
+_vue.default.component('g-toast', _toast.default);
+
+_vue.default.use(_plugin.default);
+
+new _vue.default((_ref = {
   el: '#app',
   data: {
     loadingchange1: false,
@@ -13530,13 +13641,15 @@ new _vue.default({
       inputElement.dispatchEvent(event);
       console.log('succes');
     }, 3000);
-  },
-  methods: {
-    changeinput: function changeinput(e) {
-      console.log(e); //console.log(e.target.value) 
-    }
   }
-}); //单元测试
+}, _defineProperty(_ref, "created", function created() {}), _defineProperty(_ref, "methods", {
+  changeinput: function changeinput(e) {
+    console.log(e); //console.log(e.target.value) 
+  },
+  showtoast: function showtoast() {
+    this.$toast('message');
+  }
+}), _ref)); //单元测试
 
 /*import chai from 'chai'
 import spies from 'chai-spies'
@@ -13633,7 +13746,7 @@ const expect = chai.expect
     expect(spy).to.have.been.called()
     
 }*/
-},{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue","./button-group":"src/button-group.vue","./input":"src/input.vue","./row":"src/row.vue","./col":"src/col.vue","./content":"src/content.vue","./footer":"src/footer.vue","./header":"src/header.vue","./layout":"src/layout.vue","./slide":"src/slide.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue","./button-group":"src/button-group.vue","./input":"src/input.vue","./row":"src/row.vue","./col":"src/col.vue","./content":"src/content.vue","./footer":"src/footer.vue","./header":"src/header.vue","./layout":"src/layout.vue","./slide":"src/slide.vue","./toast":"src/toast.vue","./plugin":"src/plugin.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -13661,7 +13774,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65217" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50330" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
