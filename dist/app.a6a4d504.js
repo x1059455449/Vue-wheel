@@ -13378,8 +13378,16 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
 var _default = {
-  name: 'VuewheelSlide'
+  name: 'VuewheelSlide',
+  data: function data() {
+    return {
+      view: true
+    };
+  }
 };
 exports.default = _default;
         var $166a24 = exports.default || module.exports;
@@ -13394,7 +13402,30 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "slide" }, [_vm._t("default")], 2)
+  return _c("transition", { attrs: { name: "slide" } }, [
+    _vm.view
+      ? _c(
+          "div",
+          { staticClass: "slide" },
+          [
+            _vm._t("default"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    _vm.view = false
+                  }
+                }
+              },
+              [_vm._v("close")]
+            )
+          ],
+          2
+        )
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -860,3 +860,18 @@
 .layout.hasSider[data-v-706235] {
   flex-direction: row;
 }
+.slide[data-v-166a24] {
+  width: 150px;
+  position: relative;
+}
+.slide > button[data-v-166a24] {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.slide-enter-active[data-v-166a24], .slide-leave-active[data-v-166a24] {
+  transition: all 0.3s;
+}
+.slide-enter[data-v-166a24], .slide-leave-to[data-v-166a24] {
+  margin-left: -200px;
+}
