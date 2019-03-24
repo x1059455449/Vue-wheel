@@ -13182,7 +13182,7 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { footer: "" } }, [_vm._t("default")], 2)
+  return _c("div", { staticClass: "footer" }, [_vm._t("default")], 2)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13292,7 +13292,26 @@ exports.default = void 0;
 //
 //
 //
-var _default = {};
+var _default = {
+  name: 'Vuewheellayout',
+  data: function data() {
+    return {
+      layoutClass: {
+        hasSider: false
+      }
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    //console.log(this.$children)
+    this.$children.forEach(function (vm) {
+      if (vm.$options.name === "VuewheelSlide") {
+        _this.layoutClass.hasSider = true;
+      }
+    });
+  }
+};
 exports.default = _default;
         var $706235 = exports.default || module.exports;
       
@@ -13306,7 +13325,12 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "layout" }, [_vm._t("default")], 2)
+  return _c(
+    "div",
+    { staticClass: "layout", class: _vm.layoutClass },
+    [_vm._t("default")],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13354,7 +13378,9 @@ exports.default = void 0;
 //
 //
 //
-var _default = {};
+var _default = {
+  name: 'VuewheelSlide'
+};
 exports.default = _default;
         var $166a24 = exports.default || module.exports;
       
