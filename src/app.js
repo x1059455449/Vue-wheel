@@ -12,49 +12,99 @@ import Layout from './layout'
 import Slide from './slide'
 import Toast from './toast'
 import plugin from './plugin'
+import Tabs from './tabs'
+import TabsHead from './tabs-head'
+import TabsBody from './tabs-body'
+import TabsItem from './tabs-item'
+import TabsPane from './tabs-pane'
 
-Vue.component('g-button',Button)
-Vue.component('g-icon',Icon)
-Vue.component('button-group',ButtonGroup)
-Vue.component('g-input',Input)
-Vue.component('g-row',Row)
-Vue.component('g-col',Col)
-Vue.component('g-content',Content)
-Vue.component('g-footer',Footer)
-Vue.component('g-header',Header)
-Vue.component('g-layout',Layout)
-Vue.component('g-slide',Slide)
-Vue.component('g-toast',Toast)
+
+Vue.component('g-button', Button)
+Vue.component('g-icon', Icon)
+Vue.component('button-group', ButtonGroup)
+Vue.component('g-input', Input)
+Vue.component('g-row', Row)
+Vue.component('g-col', Col)
+Vue.component('g-content', Content)
+Vue.component('g-footer', Footer)
+Vue.component('g-header', Header)
+Vue.component('g-layout', Layout)
+Vue.component('g-slide', Slide)
+Vue.component('g-toast', Toast)
 Vue.use(plugin)
+Vue.component('g-tabs', Tabs)
+Vue.component('g-tabs-head', TabsHead)
+Vue.component('g-tabs-body', TabsBody)
+Vue.component('g-tabs-item', TabsItem)
+Vue.component('g-tabs-pane', TabsPane)
+
+import createElement from 'vue'
+
+const h = createElement
 
 new Vue({
-    el:'#app',
-    data:{
-        loadingchange1:false,
-        loadingchange2:true,
-        loadingchange3:false,
-        message:''
+    el: '#app',
+    data: {
+        loadingchange1: false,
+        loadingchange2: true,
+        loadingchange3: false,
+        message: '',
+        selectedTab: 'sports'
     },
-    created () {
+    created() {
         setTimeout(() => {
             let event = new Event('change')
             let inputElement = this.$el.querySelector('input')
             inputElement.dispatchEvent(event)
             console.log('succes')
-        },3000)
+        }, 3000)
     },
-    created () {
-        
+    created() {
+        // this.$toast('message<a href="https://baidu.com">2</a>', {
+        //     // closeButton:{
+        //     //     text:'know it',
+        //     //     callback () {
+        //     //     console.log('user knew it')
+        //     // }
+        //     // }
+        //     enableHtml: false
+        // })
     },
-    methods:{
-        changeinput (e) {
+    methods: {
+        yyy(data){
+            console.log('yyy')
+            console.log(data)
+        },
+        changeinput(e) {
             console.log(e);
             //console.log(e.target.value) 
         },
-        showtoast () {
-            this.$toast('message')
+        showToast1() {
+            this.showToast('top')
+        },
+        showToast2() {
+            this.showToast('middle')
+        },
+        showToast3() {
+            this.showToast('bottom')
+        },
+        showToastTest () {
+            this.showToast('top')
+        },
+        showToast(position) {
+            this.$toast(`你的智商目前为 ${parseInt(Math.random() * 100)}。你的智商需要充值！`, {
+                position,
+                enableHtml: false,
+                closeButton: {
+                    text: '已充值',
+                    callback() {
+                        console.log('他说已经充值智商了')
+                    }
+                },
+                autoClose: 3,
+            })
         }
-    } 
+    }
 })
 
 //单元测试
@@ -151,5 +201,5 @@ const expect = chai.expect
     let button = vm.$el
     button.click()
     expect(spy).to.have.been.called()
-    
+
 }*/

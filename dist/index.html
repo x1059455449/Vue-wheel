@@ -1,177 +1,74 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue-wheel</title>
     <style>* {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    :root {
-        --button-height: 32px;
-        --font-size: 14px;
-        --button-bg: white;
-        --button-active-bg: aqua;
-        --border-radius: 4px;
-        --color: #333;
-        --border-color: #999;
-        --border-color-hover: rgb(187, 39, 39);
-    }
-    #app {
-        margin: 20px;
-    }
-    body {
-        font-size: var(--font-size);
-    }</style>
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --button-height: 32px;
+            --font-size: 14px;
+            --button-bg: white;
+            --button-active-bg: aqua;
+            --border-radius: 4px;
+            --color: #333;
+            --border-color: #999;
+            --border-color-hover: rgb(187, 39, 39);
+        }
+
+        #app {
+            margin: 20px;
+        }
+
+        body {
+            font-size: var(--font-size);
+        }</style>
     <style>.icon {
-        width: 1em;
-        height: 1em;
-    }
-    .box {
-        margin:  20px;
-    }
-    .demo {
-        border:1px solid red;
-        min-height: 100px;
-    }</style>
+            width: 1em;
+            height: 1em;
+        }
+
+        .box {
+            margin: 20px;
+        }</style>
 <link rel="stylesheet" href="/app.a6a4d504.css"></head>
+
 <body>
     <div id="app">
-        <button @click="showtoast">dianji</button>
-        <!-- <g-layout style="height:100vh;">
-            <g-header class="demo">header</g-header>
-            <g-layout class="demo">
-                <g-slide class="demo">Slide</g-slide>
-                <g-content class="demo">content</g-content>
-            </g-layout>
-            <g-footer class="demo">footer</g-footer>
-        </g-layout> -->
-        
-        <!-- <g-layout style="height:100vh;">
-                <g-header class="demo">header</g-header>
-                <g-layout class="demo">
-                    <g-content class="demo">content</g-content>
-                    <g-slide class="demo">Slide</g-slide>
-                </g-layout>
-                <g-footer class="demo">footer</g-footer>
-        </g-layout> -->
-
-        <!-- <g-layout style="height:100vh;">
-                <g-slide class="demo">Slide</g-slide>
-                <g-layout class="demo">
-                    <g-header class="demo">header</g-header>
-                    <g-content class="demo">content</g-content>
-                    <g-footer class="demo">footer</g-footer>
-                </g-layout>
-                
-        </g-layout> -->
-
-        <!-- <g-layout style="height:100vh;">
-            <g-header class="demo">header</g-header>
-            <g-content class="demo">content</g-content>
-            <g-footer class="demo">footer</g-footer>
-        </g-layout> -->
-        <div style="border: 1px solid black;"> 
-            <g-row gutter="20" align="center">
-                <g-col>333</g-col>
-                <g-col>333</g-col>
-            </g-row>
-            <g-row gutter="20">
-                <g-col>1</g-col>
-                <g-col>2</g-col>
-                <g-col>3</g-col>
-            </g-row>
-           <g-row gutter="20">
-                <g-col>1</g-col>
-                <g-col>2</g-col>
-                <g-col>3</g-col>
-                <g-col>4</g-col>
-            </g-row>
-            <g-row gutter="20">
-                <g-col span="2" :ipad="{span:8}" :narrow-pc="{span:4}" :pc="{span:2}" :wide-pc="{span:1}">
-                11111</g-col>
-                <g-col span="22" :ipad="{span:16}" :narrow-pc="{span:20}" :pc="{span:22}" :wide-pc="{span:23}">
-                    222222</g-col>
-                <!-- <g-col span=`"22"`>3</g-col> :span="`2`" :span="`22`"-->
-            </g-row>
-            <g-row gutter="20">
-                <g-col span="4">1</g-col>
-                <g-col span="20">2</g-col>
-                
-            </g-row>
-            <g-row gutter="20">
-                <g-col span="4">1</g-col>
-                <g-col span="6">2</g-col>
-                <g-col span="6">3</g-col>
-                <g-col span="6" offset="2">4</g-col>
-            </g-row>
-        </div>
-        <!-- <div>
-            <div class="row">
-                    <div class="col"></div>
-                    <div class="col"></div>
-                </div>
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col"></div>
-                    <div class="col"></div>
-                </div><div class="row">
-                    <div class="col"></div>
-                    <div class="col"></div>
-                    <div class="col"></div>
-                    <div class="col"></div>
-                </div>
-                <div class="row">
-                    <div class="col" data-span="2"></div>
-                    <div class="col" data-span="22"></div>
-                </div>    
-        </div> -->
-
-        <div class="box">
-            <g-button icon="setting" :loading="loadingchange1" @click="loadingchange1 = !loadingchange1">
-                Button
-            </g-button>
-            <g-button :loading="loadingchange2" @click="loadingchange2 = !loadingchange2">
-                Button
-            </g-button>
-            <g-button icon="setting" icon-position="right" :loading="loadingchange3" @click="loadingchange3 = !loadingchange3">
-                Button
-            </g-button>
-            <!-- <svg class="icon">
-                <use xlink:href="#i-cdownload"></use>
-            </svg> -->
-            <g-icon name="cdownload"></g-icon>
-            <g-button icon="cdownload" icon-position="right">
-                DownLoad
-            </g-button>
-    
-            <button-group style="margin:20px;">
-                <g-button icon="left">上一页</g-button>
-                <!-- <div><g-button>更多</g-button></div> -->
-                <g-button>更多</g-button>
-                <g-button icon="right" icon-position="right">下一页</g-button>
-            </button-group>
-        </div>
-
-        <div id="test"></div>
-
-        <div class="box">
-            <g-input value="张三" disabled=""></g-input>
-            <g-input value="李四" readonly=""></g-input>
-            <g-input value="周六"></g-input>
-            <g-input value="王八" @change="changeinput" v-model="message"></g-input>
-            <p>{{message}}</p>
-            <button @click="message+=5">+5</button>
-        </div>
-        <div class="box">
-            <g-input value="吴" error="姓名不能少于两个字"></g-input>
-        </div>
-
+        <!-- <g-tabs>
+            <div>message</div>
+        </g-tabs> -->
+        <g-tabs :selected.sync="selectedTab" @update:selected="yyy">
+            <g-tabs-head>
+                <template slot="actions">
+                    <button>setting</button>
+                </template>
+                <g-tabs-item name="set" disabled="">
+                    <g-icon name="setting"></g-icon>setting more
+                </g-tabs-item>
+                <g-tabs-item name="finance">
+                    finance
+                </g-tabs-item>
+                <g-tabs-item name="sports">
+                    sports
+                </g-tabs-item>
+            </g-tabs-head>
+            <g-tabs-body>
+                <g-tabs-pane name="set">something about setting</g-tabs-pane>
+                <g-tabs-pane name="finance">something about finance</g-tabs-pane>
+                <g-tabs-pane name="sports">something about sports</g-tabs-pane>
+            </g-tabs-body>
+        </g-tabs>
     </div>
     <script src="/app.a6a4d504.js"></script>
     <script src="/svg.8fe7ff3c.js"></script>
 </body>
+
 </html>
