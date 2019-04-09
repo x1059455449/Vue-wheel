@@ -14,11 +14,11 @@ export default {
   name: 'VuewheelTabsHead',
   inject: ['eventBus'],
   mounted(){
-    this.eventBus.$on('update:selected',(item,vm) => {
-      let {width, height, top, left} = vm.$el.getBoundingClientRect()
-      let {left: wrapperLeft} = this.$el.getBoundingClientRect()
-      this.$refs.line.style.width = `${width}px`
-      this.$refs.line.style.left = `${left - wrapperLeft}px`
+      this.eventBus.$on('update:selected',(item,vm) => {
+      let {width, height, top, left} = vm.$el.getBoundingClientRect();
+      let {left: wrapperLeft} = this.$el.getBoundingClientRect();
+      this.$refs.line.style.width = `${width}px`;
+      this.$refs.line.style.left = `${left - wrapperLeft}px`;
     })
   }
 }
