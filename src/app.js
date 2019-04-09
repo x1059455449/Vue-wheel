@@ -17,6 +17,7 @@ import TabsHead from './tabs-head'
 import TabsBody from './tabs-body'
 import TabsItem from './tabs-item'
 import TabsPane from './tabs-pane'
+import Popover from './popover'
 
 
 Vue.component('g-button', Button)
@@ -37,6 +38,7 @@ Vue.component('g-tabs-head', TabsHead)
 Vue.component('g-tabs-body', TabsBody)
 Vue.component('g-tabs-item', TabsItem)
 Vue.component('g-tabs-pane', TabsPane)
+Vue.component('g-popover',Popover)
 
 import createElement from 'vue'
 
@@ -49,7 +51,8 @@ new Vue({
         loadingchange2: true,
         loadingchange3: false,
         message: '',
-        selectedTab: 'finance'
+        selectedTab: 'finance',
+        selectedItem: []
     },
     created() {
         setTimeout(() => {
@@ -92,13 +95,13 @@ new Vue({
             this.showToast('top')
         },
         showToast(position) {
-            this.$toast(`你的智商目前为 ${parseInt(Math.random() * 100)}。你的智商需要充值！`, {
+            this.$toast(` ${parseInt(Math.random() * 100)}`, {
                 position,
                 enableHtml: false,
                 closeButton: {
-                    text: '已充值',
+                    text: '关闭',
                     callback() {
-                        console.log('他说已经充值智商了')
+                        console.log('已经关闭')
                     }
                 },
                 autoClose: 3,

@@ -42,31 +42,37 @@
 
 <body>
     <div id="app">
-        <!-- <g-tabs>
-            <div>message</div>
-        </g-tabs> -->
-        <g-tabs :selected.sync="selectedTab" @update:selected="yyy">
-            <g-tabs-head>
-                <g-tabs-item name="set" disabled="">
-                    <g-icon name="setting"></g-icon>setting more
-                </g-tabs-item>
-                <g-tabs-item name="finance">
-                    finance
-                </g-tabs-item>
-                <g-tabs-item name="sports">
-                    sports
-                </g-tabs-item>
-                <g-tabs-item name="news">
-                    news
-                </g-tabs-item>
-            </g-tabs-head>
-            <g-tabs-body>
-                <g-tabs-pane name="set">something about setting</g-tabs-pane>
-                <g-tabs-pane name="finance">something about finance</g-tabs-pane>
-                <g-tabs-pane name="sports">something about sports</g-tabs-pane>
-                <g-tabs-pane name="news">something about news</g-tabs-pane>
-            </g-tabs-body>
-        </g-tabs>
+        <g-popover style="margin-top: 80px; margin-left: 80px">
+            <template slot="content">
+                <div>内容1</div>
+            </template>
+            <g-button>Click(Top)</g-button>
+        </g-popover>
+        <g-popover position="bottom">
+            <template slot="content">
+                <div>内容2</div>
+            </template>
+            <g-button>Click(Botton)</g-button>      
+        </g-popover>
+        <g-popover position="left">
+            <template slot="content">
+                <div>内容3</div>
+            </template>
+            <g-button>Click(Left)</g-button>      
+        </g-popover>
+        <g-popover position="right">
+            <template slot="content">
+                <div>内容4</div>
+            </template>
+            <g-button>Click(Right)</g-button>      
+        </g-popover>
+        <g-popover trigger="hover">
+            <template slot="content">
+                <div>内容5</div>
+            </template>
+            <g-button>Hover</g-button>      
+        </g-popover>
+
     </div>
     <script src="/app.a6a4d504.js"></script>
     <script src="/svg.8fe7ff3c.js"></script>
