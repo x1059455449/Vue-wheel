@@ -13680,11 +13680,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
 var _default = {
-  name: 'GuluTabs',
+  name: 'VuewheelTabs',
   props: {
     selected: {
-      type: String,
+      type: String | Number,
       required: true
     },
     direction: {
@@ -13705,22 +13706,29 @@ var _default = {
       eventBus: this.eventBus
     };
   },
-  mounted: function mounted() {
-    var _this = this;
-
-    if (this.$children.length === 0) {
-      console && console.warn && console.warn('tabs的子组件应该是tabs-xxx的子组件，但你没有写子组件');
-    }
-
-    this.$children.forEach(function (vm) {
-      if (vm.$options.name === 'GuluTabsHead') {
-        vm.$children.forEach(function (childVm) {
-          if (childVm.$options.name === 'GuluTabsItem' && childVm.name === _this.selected) {
-            _this.eventBus.$emit('update:selected', _this.selected, childVm);
-          }
-        });
+  methods: {
+    checkChildren: function checkChildren() {
+      if (this.$children.length === 0) {
+        console && console.warn && console.warn('tabs的子组件应该是 tabs-head 和 tabs-body,但你没有写子组件');
       }
-    });
+    },
+    selectTab: function selectTab() {
+      var _this = this;
+
+      this.$children.forEach(function (vm) {
+        if (vm.$options.name === 'VuewheelTabsHead') {
+          vm.$children.forEach(function (childVm) {
+            if (childVm.$options.name === 'VuewheelTabsItem' && childVm.name === _this.selected) {
+              _this.eventBus.$emit('update:selected', _this.selected, childVm);
+            }
+          });
+        }
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.checkChildren();
+    this.selectTab();
   }
 };
 exports.default = _default;
@@ -13788,8 +13796,9 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
-  name: 'GuluTabsHead',
+  name: 'VuewheelTabsHead',
   inject: ['eventBus'],
   mounted: function mounted() {
     var _this = this;
@@ -13801,8 +13810,11 @@ var _default = {
           top = _vm$$el$getBoundingCl.top,
           left = _vm$$el$getBoundingCl.left;
 
+      var _this$$el$getBounding = _this.$el.getBoundingClientRect(),
+          wrapperLeft = _this$$el$getBounding.left;
+
       _this.$refs.line.style.width = "".concat(width, "px");
-      _this.$refs.line.style.left = "".concat(left, "px");
+      _this.$refs.line.style.left = "".concat(left - wrapperLeft, "px");
     });
   }
 };
@@ -13878,8 +13890,9 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
-  name: 'GuluTabsBody',
+  name: 'VuewheelTabsBody',
   inject: ['eventBus']
 };
 exports.default = _default;
@@ -13943,9 +13956,9 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
-  name: 'GuluTabsItem',
-  inject: ['eventBus'],
+  name: 'VuewheelTabsItem',
   data: function data() {
     return {
       active: false
@@ -13969,6 +13982,14 @@ var _default = {
       };
     }
   },
+  inject: ['eventBus'],
+  methods: {
+    onClick: function onClick() {
+      if (this.disabled) return;
+      this.eventBus && this.eventBus.$emit('update:selected', this.name, this);
+      this.$emit('click', this);
+    }
+  },
   created: function created() {
     var _this = this;
 
@@ -13976,16 +13997,6 @@ var _default = {
       this.eventBus.$on('update:selected', function (name) {
         _this.active = name === _this.name;
       });
-    }
-  },
-  methods: {
-    onClick: function onClick() {
-      if (this.disabled) {
-        return;
-      }
-
-      this.eventBus && this.eventBus.$emit('update:selected', this.name, this);
-      this.$emit('click', this);
     }
   }
 };
@@ -14060,9 +14071,9 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
-  name: 'GuluTabsPane',
-  inject: ['eventBus'],
+  name: 'VuewheelTabsPane',
   data: function data() {
     return {
       active: false
@@ -14081,6 +14092,7 @@ var _default = {
       };
     }
   },
+  inject: ['eventBus'],
   created: function created() {
     var _this = this;
 
@@ -14416,7 +14428,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63290" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60308" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

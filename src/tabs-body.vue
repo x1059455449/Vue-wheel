@@ -1,16 +1,19 @@
 <template>
-    <div class="tabs-body">
-        <slot></slot>
-    </div>
+  <div class="tabs-body">
+    <slot></slot>
+  </div>
 </template>
 
+
 <script>
-    export default {
-        name:'GuluTabsBody',
-        inject:['eventBus']
-    }
+export default {
+  name: 'VuewheelTabsBody',
+  inject: ['eventBus']
+}
 </script>
 
-<style scoped>
-
+<style lang='scss' scoped>
+  .tabs-body{
+    padding: 1em 0;
+  }
 </style>
