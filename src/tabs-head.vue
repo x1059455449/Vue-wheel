@@ -3,7 +3,7 @@
     <slot></slot>
     <div class="line" ref="line"></div>
     <div class="actions-wrapper">
-      <slot name="actions"></slot>
+      <slot name="xxxx"></slot>
     </div>
   </div>
 </template>

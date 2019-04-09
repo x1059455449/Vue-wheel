@@ -13709,7 +13709,7 @@ var _default = {
   methods: {
     checkChildren: function checkChildren() {
       if (this.$children.length === 0) {
-        console && console.warn && console.warn('tabs的子组件应该是 tabs-head 和 tabs-body,但你没有写子组件');
+        console && console.warn && console.warn('tabs的子组件应该是 tabs-xxx的子组件,但你没有写子组件');
       }
     },
     selectTab: function selectTab() {
@@ -13839,7 +13839,7 @@ exports.default = _default;
       _vm._v(" "),
       _c("div", { ref: "line", staticClass: "line" }),
       _vm._v(" "),
-      _c("div", { staticClass: "actions-wrapper" }, [_vm._t("actions")], 2)
+      _c("div", { staticClass: "actions-wrapper" }, [_vm._t("xxxx")], 2)
     ],
     2
   )
@@ -14247,7 +14247,7 @@ new _vue.default((_ref = {
     loadingchange2: true,
     loadingchange3: false,
     message: '',
-    selectedTab: 'sports'
+    selectedTab: 'finance'
   },
   created: function created() {
     var _this = this;

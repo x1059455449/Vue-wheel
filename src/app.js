@@ -49,7 +49,7 @@ new Vue({
         loadingchange2: true,
         loadingchange3: false,
         message: '',
-        selectedTab: 'sports'
+        selectedTab: 'finance'
     },
     created() {
         setTimeout(() => {

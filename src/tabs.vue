@@ -36,7 +36,7 @@ export default {
     checkChildren(){
       if(this.$children.length === 0){
         console && console.warn &&
-        console.warn('tabs的子组件应该是 tabs-head 和 tabs-body,但你没有写子组件')
+        console.warn('tabs的子组件应该是 tabs-xxx的子组件,但你没有写子组件')
       }
     },
     selectTab(){
