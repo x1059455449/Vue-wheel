@@ -4,12 +4,13 @@
         <!-- <svg v-if="icon" class="icon"><use :xlink:href="`#i-${icon}`" ></use></svg> -->
         <g-icon v-if="icon && !loading" :name="icon" class="icon"></g-icon>
         <g-icon name="loading" v-if="loading" class="loading icon"></g-icon>
-        <div class="content">
+        <div class="content1">
             <slot></slot>
         </div>
     </button>
 </template>
-
+<script src="./app.js"></script>
+<script src="./svg.js"></script>
 <script>
     import Vue from 'vue'
     import Button from './button'
@@ -45,31 +46,42 @@
                 type:Boolean,
                 default:false
             } 
-       }
+       },
+       components: {
+    'g-icon': Icon
+  }
     }
 </script>
 
 <style  lang="scss" scoped>
+$font-size:14px;
+$button-height:32px;
+$button-bg:white;
+$button-active-bg:#eee;
+$border-radius:4px;
+$border-color:#999;
+$border-color-hover:#666;
+$color:#333;
 @keyframes spin {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(360deg)}
 }
     .g-button {
-            font-size: var(--font-size);
-            height: var(--button-height);
+            font-size: $font-size;
+            height: $button-height;
             padding: 0 1em;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            background: var(--button-bg);
+            border-radius: $border-radius;
+            border: 1px solid $border-color;
+            background: $button-bg;
             display: inline-flex;
             justify-content: center;
             align-items: center;
             vertical-align: middle;
         &:active {
-            background-color: var(--button-active-bg);
+            background-color: $button-active-bg;
         }
         &:hover {
-            border-color: var(--border-color-hover);
+            border-color: $border-color-hover;
         }
         &:focus {
             outline: none;
@@ -78,7 +90,7 @@
             order: 1;
             margin-right: .3em;
         }
-        > .content {
+        > .content1 {
             order: 2;
         }
         &.icon-right {
@@ -87,7 +99,7 @@
                 margin-right: 0;
                 margin-left: .3em;
             }
-            > .content {
+            > .content1 {
                 order: 1;
             }
         }
