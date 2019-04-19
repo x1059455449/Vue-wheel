@@ -30,14 +30,6 @@
                default:'left',
                 //属性检查器
                 validator (value) {
-                    //console.log(value);
-                    // if(value !== 'left' && value !== 'right') {
-                    //     console.log('please input left or right')
-                    //     return false
-                    // } else {
-                    //     return true
-                    // }
-                    //优化
                     return !(value !== 'left' && value !== 'right')
                     //return value !== 'left' && value !== 'right' ? false : true;
                 }    

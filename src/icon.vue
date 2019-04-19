@@ -4,6 +4,7 @@
 </template>
 
 <script>
+import './svg.js'
     export default {
         name:'vuewheeicon',
         props:['name']

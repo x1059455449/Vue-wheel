@@ -1,6 +1,6 @@
 module.exports = {
     title: 'VueWheels UI',
-    description: '这是为了加深对Vue的理解才做的',
+    description: '这是为了加深对Vue的理解才做的,奴前只有几个比较简单的轮子，后面会陆续增加',
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
@@ -22,7 +22,14 @@ module.exports = {
           {
             title: '组件',
             children: [
-                '/components/button'    
+                '/components/button',
+                '/components/button-group' ,
+                '/components/input',
+                '/components/grid',
+                '/components/container',
+                '/components/tabs',
+                '/components/popover',
+                '/components/toast'      
             ]
           }
           

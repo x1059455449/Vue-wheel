@@ -1,24 +1,23 @@
 ---
-title: Button 按钮
+title: Button-Group 按钮
 ---
 
-# Button 按钮
+# ButtonGroup 按扭
 
 ### 使用方法
 
 ---
 
-<button-demo></button-demo>
-
-```
-<g-button icon="setting">Button</g-button>
-<g-button>Button</g-button>
-<g-button icon="setting" icon-position="right">Button</g-button>
-<g-button icon="cdownload" icon-position="right">DownLoad</g-button>
-<g-button icon="cdownload" icon-position="right" loading>DownLoad</g-button>
-```
+<button-group-demo></button-group-demo>
 
 ---
+```
+<g-button-group style="margin:20px;">
+<g-button icon="left">上一页</g-button>
+<g-button>更多</g-button>
+<g-button icon="right" icon-position="right">下一页</g-button>
+</g-button-group>
+```
 
 ### 参数
 
@@ -27,5 +26,3 @@ title: Button 按钮
 |  icon         | 图标名          | String |  ——  | —— |
 |  position     | 图标位置        | String |  left , right   | left |
 |  loading      | 有loading效果的按钮，点击之后出现loading，再次点击恢复正常| Boolean | —— | false |
-
-
