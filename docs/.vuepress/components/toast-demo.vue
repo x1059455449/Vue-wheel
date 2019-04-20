@@ -18,29 +18,31 @@ Vue.use(plugin)
             'g-button':Button,
             'g-toast':Toast
         },
-    methods: {
-        showToast1(){
-        this.$toast({
-            autoClose: 2
-        })
+        methods: {
+        showToast1() {
+            this.showToast('top')
         },
-        showToast2(){
-        this.$toast({
-            closeButton: true,
-            message: '这是一条消息'
-        })
+        showToast2() {
+            this.showToast('middle')
         },
-        showToast3(){
-        this.$toast({
-            closeButton: true,
-            position: 'bottom'
-        })
+        showToast3() {
+            this.showToast('bottom')
         },
-        showToast4(){
-        this.$toast({
-            closeButton: true,
-            position: 'middle'
-        })
+        showToast4 () {
+            this.showToast('top')
+        },
+        showToast(position) {
+            this.$toast(` ${parseInt(Math.random() * 100)}`, {
+                position,
+                enableHtml: false,
+                closeButton: {
+                    text: '关闭',
+                    callback() {
+                        console.log('已经关闭')
+                    }
+                },
+                autoClose: 3,
+            })
         }
     }
 }
