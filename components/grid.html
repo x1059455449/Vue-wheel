@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Grid布局 | VueWheels UI</title>
+    <meta name="description" content="这是为了加深对Vue的理解才做的,奴前只有几个比较简单的轮子，后面会陆续增加">
+    
+    
+    <link rel="preload" href="/Vue-wheel/assets/css/0.styles.34712bc7.css" as="style"><link rel="preload" href="/Vue-wheel/assets/js/app.c7a3e3c6.js" as="script"><link rel="preload" href="/Vue-wheel/assets/js/21.e52cd330.js" as="script"><link rel="preload" href="/Vue-wheel/assets/js/6.e677c11b.js" as="script"><link rel="preload" href="/Vue-wheel/assets/js/8.448507ad.js" as="script"><link rel="preload" href="/Vue-wheel/assets/js/7.1d45b70c.js" as="script"><link rel="prefetch" href="/Vue-wheel/assets/js/1.b0db52d6.js"><link rel="prefetch" href="/Vue-wheel/assets/js/10.5ece86ff.js"><link rel="prefetch" href="/Vue-wheel/assets/js/11.6f3e22c5.js"><link rel="prefetch" href="/Vue-wheel/assets/js/12.92c33d58.js"><link rel="prefetch" href="/Vue-wheel/assets/js/13.972319a3.js"><link rel="prefetch" href="/Vue-wheel/assets/js/14.167c50eb.js"><link rel="prefetch" href="/Vue-wheel/assets/js/15.7be821a0.js"><link rel="prefetch" href="/Vue-wheel/assets/js/16.e141f773.js"><link rel="prefetch" href="/Vue-wheel/assets/js/17.3cc2bd51.js"><link rel="prefetch" href="/Vue-wheel/assets/js/18.f27091ae.js"><link rel="prefetch" href="/Vue-wheel/assets/js/19.1ca7b09e.js"><link rel="prefetch" href="/Vue-wheel/assets/js/20.06084141.js"><link rel="prefetch" href="/Vue-wheel/assets/js/22.0dcd9f17.js"><link rel="prefetch" href="/Vue-wheel/assets/js/23.cb953c17.js"><link rel="prefetch" href="/Vue-wheel/assets/js/24.3a0929c5.js"><link rel="prefetch" href="/Vue-wheel/assets/js/25.89f75fc2.js"><link rel="prefetch" href="/Vue-wheel/assets/js/26.fa7f724a.js"><link rel="prefetch" href="/Vue-wheel/assets/js/27.ef9edd0e.js"><link rel="prefetch" href="/Vue-wheel/assets/js/28.e56c4ac8.js"><link rel="prefetch" href="/Vue-wheel/assets/js/3.49d7c3a8.js"><link rel="prefetch" href="/Vue-wheel/assets/js/4.20b0b420.js"><link rel="prefetch" href="/Vue-wheel/assets/js/5.b1021689.js"><link rel="prefetch" href="/Vue-wheel/assets/js/9.69612096.js">
+    <link rel="stylesheet" href="/Vue-wheel/assets/css/0.styles.34712bc7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Vue-wheel/" class="home-link router-link-active"><!----> <span class="site-name">VueWheels UI</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Vue-wheel/" class="nav-link">Home</a></div><div class="nav-item"><a href="/Vue-wheel/guide/" class="nav-link">Guide</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Vue-wheel/" class="nav-link">Home</a></div><div class="nav-item"><a href="/Vue-wheel/guide/" class="nav-link">Guide</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Vue-wheel/" class="sidebar-link">VueWheels UI</a></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>入门</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>组件</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/Vue-wheel/components/button.html" class="sidebar-link">Button 按钮</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/Vue-wheel/components/button-group.html" class="sidebar-link">Button-Group 按钮</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Vue-wheel/components/button-group.html#clientonly-button-group-demo-button-group-demo-clientonly" class="sidebar-link">&lt;button-group-demo&gt;&lt;/button-group-demo&gt;</a></li></ul></li><li><a href="/Vue-wheel/components/input.html" class="sidebar-link">Input 输入框</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/Vue-wheel/components/grid.html" class="active sidebar-link">Grid布局</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/Vue-wheel/components/container.html" class="sidebar-link">Container 布局</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/Vue-wheel/components/tabs.html" class="sidebar-link">Tabs 标签</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/Vue-wheel/components/popover.html" class="sidebar-link">Popover 弹出框</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/Vue-wheel/components/toast.html" class="sidebar-link">Toast 弹出窗口</a><ul class="sidebar-sub-headers"></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="grid布局"><a href="#grid布局" aria-hidden="true" class="header-anchor">#</a> Grid布局</h1> <h3 id="基本使用"><a href="#基本使用" aria-hidden="true" class="header-anchor">#</a> 基本使用</h3> <hr> <div data-v-6f6cfc11><div class="row" style="margin-left:NaNpx;margin-right:NaNpx;" data-v-1466bc88 data-v-6f6cfc11><div class="col col-6" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>1</div> <div class="col col-6" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>2</div> <div class="col col-6" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>3</div> <div class="col col-6" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>4</div></div> <div class="row" style="margin-left:NaNpx;margin-right:NaNpx;" data-v-1466bc88 data-v-6f6cfc11><div class="col col-12" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>1</div> <div class="col col-12" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>2</div></div> <div class="row" style="margin-left:NaNpx;margin-right:NaNpx;" data-v-1466bc88 data-v-6f6cfc11><div class="col col-8" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>1</div> <div class="col col-8" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>2</div> <div class="col col-8" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>3</div></div> <div class="row" style="margin-left:NaNpx;margin-right:NaNpx;" data-v-1466bc88 data-v-6f6cfc11><div class="col col-2" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>2</div> <div class="col col-22" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>22</div></div> <div class="row" style="margin-left:NaNpx;margin-right:NaNpx;" data-v-1466bc88 data-v-6f6cfc11><div class="col col-4" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>4</div> <div class="col col-20" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>20</div></div> <div class="row" style="margin-left:NaNpx;margin-right:NaNpx;" data-v-1466bc88 data-v-6f6cfc11><div class="col col-4" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>1</div> <div class="col col-6" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>2</div> <div class="col col-6" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>3</div> <div class="col col-6 offset-2" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-6f6cfc11>4</div></div></div> <div class="language- extra-class"><pre class="language-text"><code>&lt;g-row&gt;
+    &lt;g-col span=&quot;6&quot;&gt;1&lt;/g-col&gt;
+    &lt;g-col span=&quot;6&quot;&gt;2&lt;/g-col&gt;
+    &lt;g-col span=&quot;6&quot;&gt;3&lt;/g-col&gt;
+    &lt;g-col span=&quot;6&quot;&gt;4&lt;/g-col&gt;
+&lt;/g-row&gt;
+&lt;g-row&gt;
+    &lt;g-col span=&quot;12&quot;&gt;1&lt;/g-col&gt;
+    &lt;g-col span=&quot;12&quot;&gt;2&lt;/g-col&gt;
+&lt;/g-row&gt;
+&lt;g-row&gt;
+    &lt;g-col span=&quot;8&quot;&gt;1&lt;/g-col&gt;
+    &lt;g-col span=&quot;8&quot;&gt;2&lt;/g-col&gt;
+    &lt;g-col span=&quot;8&quot;&gt;3&lt;/g-col&gt;
+&lt;/g-row&gt;
+&lt;g-row&gt;
+    &lt;g-col span=&quot;2&quot;&gt;2&lt;/g-col&gt;
+    &lt;g-col span=&quot;22&quot;&gt;22&lt;/g-col&gt;
+&lt;/g-row&gt;
+&lt;g-row&gt;
+    &lt;g-col span=&quot;4&quot;&gt;4&lt;/g-col&gt;
+    &lt;g-col span=&quot;20&quot;&gt;20&lt;/g-col&gt;   
+&lt;/g-row&gt;
+&lt;g-row&gt;
+    &lt;g-col span=&quot;4&quot;&gt;1&lt;/g-col&gt;
+    &lt;g-col span=&quot;6&quot;&gt;2&lt;/g-col&gt;
+    &lt;g-col span=&quot;6&quot;&gt;3&lt;/g-col&gt;
+    &lt;g-col span=&quot;6&quot; offset=&quot;2&quot;&gt;4&lt;/g-col&gt;
+&lt;/g-row&gt;
+</code></pre></div><h3 id="设置gutter-offset"><a href="#设置gutter-offset" aria-hidden="true" class="header-anchor">#</a> 设置gutter/offset</h3> <hr> <div data-v-135e93ce><div class="row demo-row" style="margin-left:-10px;margin-right:-10px;" data-v-1466bc88 data-v-135e93ce><div class="col col-8" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-135e93ce><div class="demo" data-v-6fbb09ae data-v-135e93ce>8</div></div> <div class="col col-8" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-135e93ce><div class="demo" data-v-6fbb09ae data-v-135e93ce>8</div></div> <div class="col col-8" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-135e93ce><div class="demo" data-v-6fbb09ae data-v-135e93ce>8</div></div></div> <div class="row demo-row" style="margin-left:-10px;margin-right:-10px;" data-v-1466bc88 data-v-135e93ce><div class="col col-6" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-135e93ce><div class="demo" data-v-6fbb09ae data-v-135e93ce>6</div></div> <div class="col col-5 offset-1" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-135e93ce><div class="demo" data-v-6fbb09ae data-v-135e93ce>5</div></div> <div class="col col-4 offset-2" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-135e93ce><div class="demo" data-v-6fbb09ae data-v-135e93ce>4</div></div> <div class="col col-3 offset-3" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-135e93ce><div class="demo" data-v-6fbb09ae data-v-135e93ce>3</div></div></div></div> <hr> <div class="language- extra-class"><pre class="language-text"><code>&lt;g-row class=&quot;demo-row&quot; gutter=&quot;20&quot;&gt;
+    &lt;g-col span=&quot;8&quot;&gt;
+    &lt;div class=&quot;demo&quot;&gt;8&lt;/div&gt;
+    &lt;/g-col&gt;
+    &lt;g-col span=&quot;8&quot;&gt;
+    &lt;div class=&quot;demo&quot;&gt;8&lt;/div&gt;
+    &lt;/g-col&gt;
+    &lt;g-col span=&quot;8&quot;&gt;
+    &lt;div class=&quot;demo&quot;&gt;8&lt;/div&gt;
+    &lt;/g-col&gt;
+&lt;/g-row&gt;
+
+&lt;g-row class=&quot;demo-row&quot; gutter=&quot;20&quot;&gt;
+    &lt;g-col span=&quot;6&quot;&gt;
+    &lt;div class=&quot;demo&quot;&gt;6&lt;/div&gt;
+    &lt;/g-col&gt;
+    &lt;g-col span=&quot;5&quot; offset=&quot;1&quot;&gt;
+    &lt;div class=&quot;demo&quot;&gt;5&lt;/div&gt;
+    &lt;/g-col&gt;
+    &lt;g-col span=&quot;4&quot; offset=&quot;2&quot;&gt;
+    &lt;div class=&quot;demo&quot;&gt;4&lt;/div&gt;
+    &lt;/g-col&gt;
+    &lt;g-col span=&quot;3&quot; offset=&quot;3&quot;&gt;
+    &lt;div class=&quot;demo&quot;&gt;3&lt;/div&gt;
+    &lt;/g-col&gt;
+&lt;/g-row&gt;
+</code></pre></div><h3 id="页面响应式"><a href="#页面响应式" aria-hidden="true" class="header-anchor">#</a> 页面响应式</h3> <div class="row" style="margin-left:-10px;margin-right:-10px;" data-v-1466bc88 data-v-4e794e70><div class="col col-6 col-ipad-6 col-narrow-pc-4 col-pc-4 col-wide-pc-8" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-4e794e70>
+    1</div> <div class="col col-6 col-ipad-6 col-narrow-pc-20 col-pc-4 col-wide-pc-8" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-4e794e70>
+    2</div> <div class="col col-6 col-ipad-6 col-narrow-pc-20 col-pc-4 col-wide-pc-8" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-4e794e70>
+    3</div> <div class="col col-6 col-ipad-6 col-narrow-pc-20 col-pc-4 col-wide-pc-8" style="padding-left:0px;padding-right:0px;" data-v-6fbb09ae data-v-4e794e70>
+    4</div></div> <div class="language- extra-class"><pre class="language-text"><code>&lt;g-row gutter=&quot;20&quot;&gt;
+    &lt;g-col span=&quot;6&quot; 
+    :ipad=&quot;{span:6}&quot; :narrow-pc=&quot;{span:4}&quot; :pc=&quot;{span:4}&quot;
+    :wide-pc=&quot;{span:8}&quot;&gt;
+    1&lt;/g-col&gt;
+    &lt;g-col span=&quot;6&quot; 
+    :ipad=&quot;{span:6}&quot; :narrow-pc=&quot;{span:20}&quot; :pc=&quot;{span:4}&quot;
+    :wide-pc=&quot;{span:8}&quot;&gt;
+    2&lt;/g-col&gt;
+    &lt;g-col span=&quot;6&quot; 
+    :ipad=&quot;{span:6}&quot; :narrow-pc=&quot;{span:20}&quot; :pc=&quot;{span:4}&quot;
+    :wide-pc=&quot;{span:8}&quot;&gt;
+    3&lt;/g-col&gt;
+    &lt;g-col span=&quot;6&quot; 
+    :ipad=&quot;{span:6}&quot; :narrow-pc=&quot;{span:20}&quot; :pc=&quot;{span:4}&quot;
+    :wide-pc=&quot;{span:8}&quot;&gt;
+    4&lt;/g-col&gt;
+&lt;/g-row&gt;
+</code></pre></div><h3 id="row-参数"><a href="#row-参数" aria-hidden="true" class="header-anchor">#</a> row 参数</h3> <table><thead><tr><th style="text-align:left">参数</th> <th style="text-align:left">说明</th> <th style="text-align:left">类型</th> <th style="text-align:center">可选值</th> <th style="text-align:center">默认值</th></tr></thead> <tbody><tr><td style="text-align:left">gutter</td> <td style="text-align:left">栅格的间隙</td> <td style="text-align:left">String,Number</td> <td style="text-align:center">——</td> <td style="text-align:center">——</td></tr> <tr><td style="text-align:left">align</td> <td style="text-align:left">栅格内部元素水平排列方向</td> <td style="text-align:left">String</td> <td style="text-align:center">left,right,center</td> <td style="text-align:center">left</td></tr></tbody></table> <h3 id="col-参数"><a href="#col-参数" aria-hidden="true" class="header-anchor">#</a> col 参数</h3> <table><thead><tr><th style="text-align:left">参数</th> <th style="text-align:left">说明</th> <th style="text-align:left">类型</th> <th style="text-align:center">可选值</th> <th style="text-align:center">默认值</th></tr></thead> <tbody><tr><td style="text-align:left">span</td> <td style="text-align:left">栅格占据的列数</td> <td style="text-align:left">String,Number</td> <td style="text-align:center">——</td> <td style="text-align:center">——</td></tr> <tr><td style="text-align:left">offset</td> <td style="text-align:left">栅格左侧的间隔格数</td> <td style="text-align:left">String,Number</td> <td style="text-align:center">——</td> <td style="text-align:center">——</td></tr> <tr><td style="text-align:left">ipad</td> <td style="text-align:left">≥577px  响应式栅格数</td> <td style="text-align:left">Object (例子：{span: 4, offset: 4})</td> <td style="text-align:center">——</td> <td style="text-align:center">——</td></tr> <tr><td style="text-align:left">npc</td> <td style="text-align:left">≥769px  响应式栅格数</td> <td style="text-align:left">Object (例子：{span: 4, offset: 4})</td> <td style="text-align:center">——</td> <td style="text-align:center">——</td></tr> <tr><td style="text-align:left">pc</td> <td style="text-align:left">≥993px  响应式栅格数</td> <td style="text-align:left">Object (例子：{span: 4, offset: 4})</td> <td style="text-align:center">——</td> <td style="text-align:center">——</td></tr> <tr><td style="text-align:left">wpc</td> <td style="text-align:left">≥1201px 响应式栅格数</td> <td style="text-align:left">Object (例子：{span: 4, offset: 4})</td> <td style="text-align:center">——</td> <td style="text-align:center">——</td></tr></tbody></table></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/Vue-wheel/components/input.html" class="prev">
+          Input 输入框
+        </a></span> <span class="next"><a href="/Vue-wheel/components/container.html">
+          Container 布局
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/Vue-wheel/assets/js/app.c7a3e3c6.js" defer></script><script src="/Vue-wheel/assets/js/21.e52cd330.js" defer></script><script src="/Vue-wheel/assets/js/6.e677c11b.js" defer></script><script src="/Vue-wheel/assets/js/8.448507ad.js" defer></script><script src="/Vue-wheel/assets/js/7.1d45b70c.js" defer></script>
+  </body>
+</html>
