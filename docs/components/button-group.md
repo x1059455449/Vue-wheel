@@ -7,10 +7,8 @@ title: Button-Group 按钮
 ### 使用方法
 
 ---
-
 <button-group-demo></button-group-demo>
 
----
 ```
 <g-button-group style="margin:20px;">
 <g-button icon="left">上一页</g-button>
