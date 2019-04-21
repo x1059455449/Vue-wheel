@@ -10,7 +10,7 @@ title: Button-Group 按钮
 <button-group-demo></button-group-demo>
 
 ```
-<g-button-group style="margin:20px;">
+<g-button-group>
 <g-button icon="left">上一页</g-button>
 <g-button>更多</g-button>
 <g-button icon="right" icon-position="right">下一页</g-button>
