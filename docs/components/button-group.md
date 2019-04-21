@@ -7,7 +7,7 @@ title: Button-Group 按钮
 ### 使用方法
 
 ---
-<button-group-demo></button-group-demo>
+<!-- <button-group-demo></button-group-demo> -->
 
 ```
 <g-button-group>
