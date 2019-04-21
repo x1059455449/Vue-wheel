@@ -1,8 +1,9 @@
 {
-  "name": "vue-wheel",
+  "name": "Vue-wheel",
   "version": "1.0.0",
   "description": "一组Vue的轮子",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "repository": "git+https://github.com/x1059455449/Vue-wheel.git",
   "scripts": {
     "dev": "parcel index.html --no-cache",
     "watch": "parcel watch test/* --no-cache",
@@ -10,7 +11,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
-  "repository": "git+https://github.com/x1059455449/Vue-wheel.git",
+ 
   "keywords": [
     "vue",
     "ui.design"
