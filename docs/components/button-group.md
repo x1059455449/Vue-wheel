@@ -7,9 +7,9 @@ title: Button-Group 按钮
 ### 使用方法
 
 ---
-
+<ClientOnly>
 <button-group-demo></button-group-demo>
-
+</ClientOnly>
 ---
 ```
 <g-button-group style="margin:20px;">
