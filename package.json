@@ -4,15 +4,13 @@
   "description": "一组Vue的轮子",
   "main": "index.js",
   "scripts": {
-    "dev-test": "parcel watch test/* --no-cache & karma start",
+    "dev": "parcel index.html --no-cache",
+    "watch": "parcel watch test/* --no-cache",
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/x1059455449/Vue-wheel.git"
-  },
+  "repository": "git+https://github.com/x1059455449/Vue-wheel.git",
   "keywords": [
     "vue",
     "ui.design"
