@@ -11,7 +11,6 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
- 
   "keywords": [
     "vue",
     "ui.design"
